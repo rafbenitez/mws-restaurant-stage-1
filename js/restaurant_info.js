@@ -80,7 +80,7 @@ fetchRestaurantFromURL = (callback) => {
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
-  const imgSizes = '(max-width: 767px) 370px, (min-width: 768px) 700px, 370px';
+  const IMAGE_SIZES = '(max-width: 767px) 370px, (min-width: 768px) 700px, 370px';
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
 
@@ -88,10 +88,10 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
+  image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.setAttribute('srcset', restaurant.srcset);
-  image.setAttribute('sizes', imgSizes);
+  image.setAttribute('sizes', IMAGE_SIZES);
   image.alt = restaurant.photo_description;
 
   const cuisine = document.getElementById('restaurant-cuisine');
@@ -188,7 +188,7 @@ createReviewHTML = (review) => {
 /**
  * Add restaurant name to the breadcrumb navigation menu
  */
-fillBreadcrumb = (restaurant=self.restaurant) => {
+fillBreadcrumb = (restaurant = self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
