@@ -155,6 +155,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   li.tabIndex = 0;
+  li.setAttribute('role', 'article');
   li.setAttribute('aria-label', review.name);
 
   const reviewHeader = document.createElement('div');

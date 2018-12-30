@@ -176,6 +176,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 createRestaurantHTML = (restaurant) => {
   const imgSizes = '(max-width: 991px) 270px, (min-width: 992px) 370px, 270px';
   const li = document.createElement('li');
+  li.setAttribute('role', 'article');
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
